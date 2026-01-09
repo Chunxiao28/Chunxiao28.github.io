@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>王春晓 | 个人网站</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+  <script defer src="../assets/js/lang.js"></script>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">王春晓 | Chunxiao Wang</div>
+        <div class="subtitle">研发工程师 & 企业博士生 · UBEM 验证 / 诊断 / 校准</div>
+      </div>
+      <div class="lang" aria-label="Language switcher">
+        <button data-lang-btn="zh" type="button" aria-pressed="false">中文</button>
+        <button data-lang-btn="en" type="button" aria-pressed="false">EN</button>
+        <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Top</a>
+      </div>
+    </div>
+    
+    <div class="hero">
+      <div class="card pad">
+        <h1 class="h1">主页（基础介绍）</h1>
+        <p class="muted">
+          我聚焦城市尺度建筑能耗模型（UBEM）的验证、校准与误差诊断，使用真实测量能耗数据评估模型在多应用场景下的可用性。
+          由于企业博士项目涉及客户数据与内部工具链，部分代码与数据无法公开；本网站以公开成果、方法论框架与可脱敏证据展示为主。
+        </p>
+        <div class="pills">
+          <span class="pill">方向：<code>城市能源转型</code></span>
+          <span class="pill"><code>楼宇能源系统节能</code></span>
+          <span class="pill"><code>需求管理</code></span>
+          <span class="pill"><code>时序负荷预测</code></span>
+        </div>
+        <div class="callout">
+          <strong>提示：</strong>点击下方卡片进入二级页面；二级页面已预留：框架图、图表、交互式 3D（glb 或 3D 图）模块。
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h2 class="h2"><span class="dot"></span>联系方式</h2>
+        <div class="small muted">📧 <a href="mailto:wangchunxiao1999@gmail.com">wangchunxiao1999@gmail.com</a></div>
+        <div class="small muted">📞 <a href="tel:+33665266323">+33 6 65 26 63 23</a></div>
+        <div class="small muted">🔗 ORCID：<a href="#" title="TODO">TODO</a></div>
+        <div class="small muted">🔗 领英：<a href="#" title="TODO">TODO</a></div>
+
+        <div class="item"></div>
+        <h2 class="h2"><span class="dot"></span>教育</h2>
+        <div class="item"><div class="itemhead"><div class="role">PSL 博士 · 能源工程</div><div class="meta">2023.02 – 2026.04</div></div></div>
+        <div class="item"><div class="itemhead"><div class="role">INSA Lyon 硕士 · 土木工程与城市规划</div><div class="meta">2017.09 – 2022.09</div></div></div>
+        <div class="item"><div class="itemhead"><div class="role">ENSAL 学士 · 建筑设计</div><div class="meta">2019.09 – 2022.06</div></div></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card pad">
+        <h2 class="h2"><span class="dot"></span>科研经历（进入详情）</h2>
+        <div class="cards">
+          <a class="linkcard" href="./experience_ubem_validation.html"><p class="t">UBEM 验证与诊断框架（小时级动态）</p><p class="d">贝叶斯校准 + UA/参数估计 + 多尺度误差诊断 + 外推。</p></a>
+          <a class="linkcard" href="./experience_data_governance.html"><p class="t">城市尺度能耗数据治理流水线</p><p class="d">缺失/异常、无监督质检、质量 KPI、可用性筛选。</p></a>
+          <a class="linkcard" href="./experience_tools.html"><p class="t">内部工具开发（可公开描述部分）</p><p class="d">自动分区、GP4Val、气象增强（GHI 分解+插补）。</p></a>
+          <a class="linkcard" href="./experience_national_profiles.html"><p class="t">国家尺度负荷曲线库（实习）</p><p class="d">抽样—贝叶斯网络—行为模拟—UBEM 仿真。</p></a>
+        </div>
+      </section>
+
+      <section class="card pad">
+        <h2 class="h2"><span class="dot"></span>发表成果（进入详情）</h2>
+        <div class="cards">
+          <a class="linkcard" href="./pub_bs2025_gp.html"><p class="t">Building Simulation 2025（口头）</p><p class="d">GP 误差结构建模与外推。</p></a>
+          <a class="linkcard" href="./pub_usim2024_sampling.html"><p class="t">USim 2024（口头）</p><p class="d">抽样调查方法用于验证数据稀缺。</p></a>
+          <a class="linkcard" href="./pub_ibpsa_fr_2024_multip.html"><p class="t">IBPSA France 2024（口头）</p><p class="d">多时段动态验证与诊断。</p></a>
+          <a class="linkcard" href="./project_pv_forecast.html"><p class="t">硕士项目：日前光伏预测</p><p class="d">天气 API + GHI 分解（DNI/DHI）。</p></a>
+        </div>
+      </section>
+    </div>
+
+    <section class="card pad section">
+      <h2 class="h2"><span class="dot"></span>技能</h2>
+      <div class="grid">
+        <div>
+          <div class="role">建模与评估</div>
+          <p class="muted small">能源模拟 · 校准/验证/诊断 · UA/SA · 贝叶斯推断 · 误差分析</p>
+          <div class="role" style="margin-top:10px;">数据与算法</div>
+          <p class="muted small">时序分析与预测 · 异常检测 · 机器学习 · 数据质量治理</p>
+        </div>
+        <div>
+          <div class="role">工具与语言</div>
+          <p class="muted small">Python · Matlab · Java · C/C++ · SQL · Git · GeoPandas · QGIS · EnergyPlus · Dimosim</p>
+          <div class="role" style="margin-top:10px;">语言能力</div>
+          <p class="muted small">英语（流利）· 法语（流利）· 德语（中级）</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">© 2026 Chunxiao Wang · Static site (GitHub Pages ready)</div>
+  </div>
+
+  <script>SiteLang.init();</script>
+</body>
+</html>

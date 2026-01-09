@@ -98,6 +98,10 @@
     <div class="footer">© 2026 Chunxiao Wang · Static site (GitHub Pages ready)</div>
   </div>
 
-  <script>SiteLang.init();</script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.SiteLang) SiteLang.init();
+  });
+</script>
 </body>
 </html>

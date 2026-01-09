@@ -1,1 +1,446 @@
-<p>Hello world
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>王春晓 | Chunxiao Wang - 简历</title>
+  <style>
+    :root{
+      --fg:#111;
+      --muted:#555;
+      --light:#f5f7fa;
+      --border:#e6e8ee;
+      --accent:#0b57d0;
+      --accent2:#0f766e;
+      --bg:#fff;
+      --shadow: 0 6px 18px rgba(0,0,0,.06);
+      --radius:14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC",
+              "Hiragino Sans GB", "Microsoft YaHei", "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    html,body{background:var(--bg); color:var(--fg); font-family:var(--sans); line-height:1.55;}
+    body{margin:0; padding:24px;}
+    a{color:var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .page{max-width:980px; margin:0 auto;}
+    header{
+      display:grid; grid-template-columns: 1.3fr .7fr; gap:18px;
+      padding:22px; border:1px solid var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .name{font-size:30px; font-weight:800; letter-spacing:.2px;}
+    .tagline{margin-top:6px; color:var(--muted); font-weight:600;}
+    .org{margin-top:8px; color:var(--muted);}
+    .contact{font-size:14px; color:var(--muted); display:flex; flex-direction:column; gap:8px;}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      background:var(--light); border:1px solid var(--border);
+      padding:6px 10px; border-radius:999px; font-size:13px; color:var(--muted);
+    }
+    .pill code{font-family:var(--mono); font-size:12px; color:var(--fg);}
+    main{margin-top:18px; display:grid; grid-template-columns: 1fr; gap:14px;}
+    section{
+      border:1px solid var(--border); border-radius:var(--radius);
+      padding:18px 20px; box-shadow:var(--shadow);
+    }
+    h2{
+      margin:0 0 10px 0; font-size:18px;
+      display:flex; align-items:center; gap:10px;
+    }
+    h2 .dot{width:10px; height:10px; border-radius:50%; background:var(--accent2); display:inline-block;}
+    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap:14px;}
+    .muted{color:var(--muted);}
+    .small{font-size:13px;}
+    .kvs{display:grid; grid-template-columns: 160px 1fr; gap:8px 14px; margin-top:8px;}
+    .kvs div{padding:2px 0;}
+    .kvs .k{color:var(--muted);}
+    .item{padding:12px 0; border-top:1px dashed var(--border);}
+    .item:first-child{border-top:none; padding-top:4px;}
+    .itemhead{
+      display:flex; flex-wrap:wrap; gap:10px;
+      align-items:baseline; justify-content:space-between;
+    }
+    .role{font-weight:800;}
+    .meta{color:var(--muted); font-size:13px;}
+    ul{margin:8px 0 0 18px; padding:0;}
+    li{margin:6px 0;}
+    .two-col-list{columns:2; column-gap:24px;}
+    .two-col-list li{break-inside:avoid;}
+    .badge{
+      display:inline-flex; align-items:center; gap:6px;
+      font-size:12px; color:#0b57d0; background:#eaf1ff; border:1px solid #d7e4ff;
+      padding:3px 8px; border-radius:999px; font-weight:700;
+    }
+    .callout{
+      margin-top:10px; padding:10px 12px; background:#fff7ed;
+      border:1px solid #fed7aa; border-radius:12px; color:#7c2d12; font-size:13px;
+    }
+
+    /* Reserved media blocks (images/captions/links) */
+    .evidence{
+      margin-top:12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      background:linear-gradient(0deg, rgba(245,247,250,.85), rgba(245,247,250,.85));
+    }
+    .evidence-header{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:10px; margin-bottom:10px;
+    }
+    .evidence-title{font-weight:800; font-size:13px; color:var(--fg);}
+    .evidence-note{font-size:12px; color:var(--muted);}
+    .evidence-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .evidence-slot{
+      border:1px dashed #cfd6e4;
+      border-radius:12px;
+      background:#fff;
+      padding:10px;
+      min-height:120px;
+      display:flex; flex-direction:column; gap:8px;
+      justify-content:center; align-items:center;
+      text-align:center;
+    }
+    .evidence-slot strong{font-size:13px;}
+    .evidence-slot span{font-size:12px; color:var(--muted);}
+    figure{margin:0; width:100%;}
+    figure img{max-width:100%; border-radius:10px; border:1px solid var(--border);}
+    figcaption{margin-top:6px; font-size:12px; color:var(--muted);}
+
+    /* Print */
+    @media print{
+      body{padding:0;}
+      header, section{box-shadow:none;}
+      a{color:var(--fg); text-decoration:none;}
+      .page{max-width:none; margin:0; }
+      section{break-inside:avoid;}
+      .evidence{background:#fff;}
+    }
+
+    @media (max-width: 780px){
+      header{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .evidence-grid{grid-template-columns:1fr;}
+      .two-col-list{columns:1;}
+      .kvs{grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <div class="name">王春晓 <span class="muted">|</span> Chunxiao Wang</div>
+      <div class="tagline">研发工程师 & 博士生 · R&D Engineer & PhD Candidate</div>
+      <div class="org">Efficacity / 法国建筑科学技术中心（CSTB） / 巴黎文理大学（PSL）</div>
+
+      <div class="pillrow" aria-label="Target roles">
+        <span class="pill">求职方向：<code>城市能源转型</code></span>
+        <span class="pill"><code>楼宇能源系统节能</code></span>
+        <span class="pill"><code>能源需求管理</code></span>
+        <span class="pill"><code>时序负荷预测（研发岗）</code></span>
+      </div>
+
+      <div class="callout">
+        <strong>企业博士说明：</strong>部分项目与工具链受保密协议限制，源码与数据无法公开。可在“工作经历 / 论文发表”板块通过插图、架构图、脱敏截图、会议海报等方式补充说明。
+      </div>
+    </div>
+
+    <div class="contact">
+      <div><strong>联系方式</strong></div>
+      <div>📧 <a href="mailto:wangchunxiao1999@gmail.com">wangchunxiao1999@gmail.com</a></div>
+      <div>📞 <a href="tel:+33665266323">+33 6 65 26 63 23</a></div>
+      <div>🔗 ORCID：<a href="#" title="TODO: add your ORCID link">TODO</a></div>
+      <div>🔗 领英 LinkedIn：<a href="#" title="TODO: add your LinkedIn link">TODO</a></div>
+      <div class="small muted">最后更新：2026-01-09</div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="education">
+      <h2><span class="dot"></span>教育背景 · Education</h2>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">巴黎文理大学（PSL） — 能源工程 博士 / PhD in Energy Engineering</div>
+          <div class="meta">2023.02 – 2026.04</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">INSA Lyon — 土木工程与城市规划 硕士 / MSc in Civil Engineering & Urban Planning</div>
+          <div class="meta">2017.09 – 2022.09</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">ENSAL — 建筑设计 学士 / BSc in Architecture Design</div>
+          <div class="meta">2019.09 – 2022.06</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2><span class="dot"></span>工作经历 · Experience</h2>
+
+      <div class="item">
+        <div class="itemhead">
+          <div>
+            <span class="role">研发工程师 – Efficacity / 法国建筑科学技术中心（CSTB）</span>
+            <span class="badge">Industrial PhD</span>
+          </div>
+          <div class="meta">2023.02 – 至今 · 巴黎 & 尼斯</div>
+        </div>
+        <div class="muted small">科研方向：城市建筑能源模型（UBEM）的验证与诊断方法论（基于实测能耗数据，评估模型在多应用场景下的可用性）</div>
+        <ul>
+          <li><strong>商业测量数据治理与可用性提升：</strong>建立自动化数据处理流程；引入无监督质检与异常标注；输出质量指标与可用数据集；在 3 个欧洲大型区域供暖/供冷网络项目应用（310+ 建筑、3 年数据），使缺失严重站点可用于验证/校准。</li>
+          <li><strong>小时级 UBEM 验证方法论工程化：</strong>构建“贝叶斯校准 + UA/参数估计 + 多尺度误差诊断 + 无验证数据场景外推”的一体化框架；模块已被 Efficacity 与 CSTB 采用并纳入校准框架。</li>
+          <li><strong>内部工具开发：</strong>自动分区（算法驱动单区→多区）、GP4Val（基于高斯过程的预测能力评估）、气象数据抓取/转换/增强（API + GHI 分解 + 插补）；参与模拟/校准工具链的 bug 修复与功能扩展。</li>
+          <li><strong>协作对齐与交付：</strong>与 Veolia、ENGIE 等多方研发团队推进落地；编写 4 份内部工具使用手册，提升复用与交付效率。</li>
+          <li><strong>带教与质量把控（4 名实习生）：</strong>任务拆解、技术指导、代码评审、方法论审查；其中 2 人交付内部软件扩展模块，1 人完成数据库更新扩展，1 人完成分析性研究并交付内部报告。</li>
+          <li><strong>代表性技术汇报：</strong>在法国技术研究院（FIT）联合研讨会及 CSTB 跨部门研讨会汇报研究与工具链成果，促进知识传播与合作推进。</li>
+        </ul>
+
+        <!-- Evidence / Media placeholder block for this experience -->
+        <div class="evidence" aria-label="Experience evidence block">
+          <div class="evidence-header">
+            <div class="evidence-title">插图/说明模块（可选）— Evidence & Illustrations</div>
+            <div class="evidence-note">可放：架构图、脱敏截图、流程图、海报、slides 链接等（支持复制多份）</div>
+          </div>
+          <div class="evidence-grid">
+            <div class="evidence-slot">
+              <strong>图片占位 1</strong>
+              <span>将 &lt;img src="..."&gt; 放入此处，或替换为 &lt;figure&gt;…</span>
+            </div>
+            <div class="evidence-slot">
+              <strong>图片占位 2</strong>
+              <span>可用于对比图、指标结果、模块示意图等</span>
+            </div>
+          </div>
+
+          <!-- Example figure template (copy/paste and fill in) -->
+          <!--
+          <figure>
+            <img src="images/ubem_pipeline.png" alt="UBEM validation pipeline (sanitised)" />
+            <figcaption>UBEM validation & diagnostics pipeline (sanitised). Add a short explanation here.</figcaption>
+          </figure>
+          -->
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">毕业实习 → 研发工程师 – Efficacity</div>
+          <div class="meta">2022.02 – 2022.12 · 巴黎</div>
+        </div>
+        <ul>
+          <li><strong>国家尺度建筑负荷曲线数据库：</strong>基于“建筑存量抽样—参数概率推断（贝叶斯网络）—用户行为模拟（马尔可夫链）—UBEM 仿真”生成负荷曲线（对标美国 EULP 数据集思路），覆盖住宅/办公/学校，形成近万条曲线，并显式刻画负荷同时性。</li>
+          <li><strong>工程化落地（快速估算）：</strong>用于无需重新仿真的街区尺度负荷快速估算与需求预测，嵌入多个核心工程软件模块并持续迭代；与 ENGIE 研发团队交流并获得反馈。</li>
+        </ul>
+
+        <div class="evidence" aria-label="Experience evidence block">
+          <div class="evidence-header">
+            <div class="evidence-title">插图/说明模块（可选）— Evidence & Illustrations</div>
+            <div class="evidence-note">可放：方法流程图、结果图、对标数据集引用等（脱敏）</div>
+          </div>
+          <div class="evidence-grid">
+            <div class="evidence-slot"><strong>图片占位 1</strong><span>例如：生成流程示意图</span></div>
+            <div class="evidence-slot"><strong>图片占位 2</strong><span>例如：曲线库规模/覆盖范围图</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">工程师实习 – 法国建筑业联合会</div>
+          <div class="meta">2021.06 – 2021.09 · 巴黎</div>
+        </div>
+        <ul>
+          <li><strong>建筑工业化文献调研：</strong>梳理关键技术路径、产业成熟度与落地障碍，形成结构化综述/内部报告。</li>
+        </ul>
+
+        <div class="evidence" aria-label="Experience evidence block">
+          <div class="evidence-header">
+            <div class="evidence-title">插图/说明模块（可选）— Evidence & Illustrations</div>
+            <div class="evidence-note">可放：综述框架、技术路线图、关键引用列表（公开部分）</div>
+          </div>
+          <div class="evidence-grid">
+            <div class="evidence-slot"><strong>图片占位 1</strong><span>例如：技术路线图</span></div>
+            <div class="evidence-slot"><strong>图片占位 2</strong><span>例如：成熟度评估表</span></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="publications">
+      <h2><span class="dot"></span>科研项目与论文发表 · Publications</h2>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">国际会议 · International Conferences</div>
+          <div class="meta">Selected</div>
+        </div>
+
+        <ol style="margin:10px 0 0 18px;">
+          <li style="margin:10px 0;">
+            <strong>Chunxiao Wang et al.</strong> (2025).
+            <em>Modelling the error structure in Urban Building Energy Models with a Gaussian Process-based approach.</em>
+            Proceedings of Building Simulation 2025: 19th Conference of IBPSA.（口头报告）
+            <div class="muted small">提出基于高斯过程的 UBEM 误差结构建模框架，学习“验证实验条件 → 验证误差”的映射，在缺少新增实测数据时估计预测误差与不确定性并外推。</div>
+
+            <div class="evidence" aria-label="Publication evidence block">
+              <div class="evidence-header">
+                <div class="evidence-title">插图/说明模块（论文/报告）— Figures, Posters, Links</div>
+                <div class="evidence-note">可放：论文链接、海报、演讲截图、关键图（脱敏）</div>
+              </div>
+              <div class="evidence-grid">
+                <div class="evidence-slot"><strong>图片占位 1</strong><span>例如：方法框架图 / GP 示意图</span></div>
+                <div class="evidence-slot"><strong>图片占位 2</strong><span>例如：结果图 / 不确定性外推示例</span></div>
+              </div>
+              <!-- Example link list -->
+              <!--
+              <ul class="small">
+                <li><a href="TODO">Paper / DOI</a></li>
+                <li><a href="TODO">Slides (PDF)</a></li>
+                <li><a href="TODO">Poster</a></li>
+              </ul>
+              -->
+            </div>
+          </li>
+
+          <li style="margin:10px 0;">
+            <strong>Chunxiao Wang et al.</strong> (2024).
+            <em>Addressing Data Scarcity in UBEM Validation: Application of Survey Sampling Techniques.</em>
+            Proceedings of USim Conference 2024.（口头报告）
+            <div class="muted small">面向验证数据稀缺问题，引入抽样调查思想，通过样本设计/加权，使有限测量数据也能得到更具代表性的性能评估。</div>
+
+            <div class="evidence" aria-label="Publication evidence block">
+              <div class="evidence-header">
+                <div class="evidence-title">插图/说明模块（论文/报告）— Figures, Posters, Links</div>
+                <div class="evidence-note">可放：抽样设计示意、权重解释图、案例结果等</div>
+              </div>
+              <div class="evidence-grid">
+                <div class="evidence-slot"><strong>图片占位 1</strong><span>例如：抽样框架/加权流程</span></div>
+                <div class="evidence-slot"><strong>图片占位 2</strong><span>例如：代表性对比/误差变化</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li style="margin:10px 0;">
+            <strong>Chunxiao Wang et al.</strong> (2024).
+            <em>Advancing Urban Building Energy Model Validation: A Comprehensive Multi-period Approach for Dynamic Outputs.</em>
+            Proceedings of Conference IBPSA France-La Rochelle Oléron-2024, 631–639.（口头报告）
+            <div class="muted small">提出面向小时级动态输出的多时段综合验证，在不同时间段/运行条件下进行一致的误差评估与诊断，支持面向应用场景的有效性判断。</div>
+
+            <div class="evidence" aria-label="Publication evidence block">
+              <div class="evidence-header">
+                <div class="evidence-title">插图/说明模块（论文/报告）— Figures, Posters, Links</div>
+                <div class="evidence-note">可放：多时段设计示意、诊断图例、指标分解图等</div>
+              </div>
+              <div class="evidence-grid">
+                <div class="evidence-slot"><strong>图片占位 1</strong><span>例如：多时段验证设计图</span></div>
+                <div class="evidence-slot"><strong>图片占位 2</strong><span>例如：误差分解/诊断可视化</span></div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">校内科研项目（硕士期间）｜建筑改造中的能源优化</div>
+          <div class="meta">INSA Lyon / CETHIL · 2021.09 – 2022.01</div>
+        </div>
+        <ul>
+          <li><strong>日前光伏发电预测模块：</strong>自动抓取天气预报数据，处理辐照度并进行 GHI 分解（推导 DNI/DHI 等），预测光伏发电量（pvlib）。</li>
+          <li>输出可复用代码模块并编写研发项目报告。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2><span class="dot"></span>核心技能 · Skills</h2>
+
+      <div class="grid-2">
+        <div>
+          <div class="role">建模与评估</div>
+          <ul class="two-col-list">
+            <li>能源模拟</li>
+            <li>校准 / 验证 / 诊断</li>
+            <li>UA / SA</li>
+            <li>贝叶斯推断</li>
+            <li>误差分析</li>
+          </ul>
+        </div>
+        <div>
+          <div class="role">数据与算法</div>
+          <ul class="two-col-list">
+            <li>时序分析与预测</li>
+            <li>异常检测</li>
+            <li>机器学习</li>
+            <li>数据质量分析与治理</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="kvs">
+          <div class="k">编程</div><div>Python · Matlab · Java · C · C++ · SQL · Git</div>
+          <div class="k">地理信息系统</div><div>GeoPandas（Python）· QGIS</div>
+          <div class="k">工程软件</div><div>Dimosim（UBEM）· EnergyPlus · ENVI-met · Revit · AutoCAD · SketchUp</div>
+          <div class="k">语言能力</div><div>英语（流利）· 法语（流利）· 德语（中级）</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="outreach">
+      <h2><span class="dot"></span>行业传播与组织 · Outreach</h2>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">城市能源与生态转型科普新媒体（发起 / 运营 / 编辑）</div>
+          <div class="meta">公众号 & B 站</div>
+        </div>
+        <ul>
+          <li>运营科普公众号与 B 站账号，策划并产出面向公众的城市能源转型内容（选题、脚本/图文、数据核查与发布），提升气候与技术议题的公众可理解性与传播效果。</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="itemhead">
+          <div class="role">可持续建筑环境交流社群（参与者）</div>
+          <div class="meta">跨国博士生交流会议</div>
+        </div>
+        <ul>
+          <li>进行研究/工程实践分享，促进跨机构经验交流与合作。</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <section id="notes">
+      <h2><span class="dot"></span>使用说明 · Notes</h2>
+      <ul class="small muted">
+        <li>将图片放到同级目录的 <code>images/</code> 文件夹中，然后在 Evidence 模块里用 <code>&lt;img src="images/xxx.png"&gt;</code> 引用即可。</li>
+        <li>如果你需要在“工作经历/论文发表”每条经历下插入更多图片，复制对应的 <code>&lt;div class="evidence"&gt;...&lt;/div&gt;</code> 整块即可。</li>
+        <li>建议把 ORCID / LinkedIn / 论文 DOI 链接补上，以便线上投递时可验证。</li>
+      </ul>
+    </section>
+
+  </main>
+
+</div>
+</body>
+</html>

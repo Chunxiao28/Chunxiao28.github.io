@@ -13,28 +13,29 @@
     <div class="topbar">
       <div class="brand">
         <div class="title">Chunxiao Wang | 王春晓</div>
-        <div class="subtitle">R&D Engineer & Industrial PhD Candidate · UBEM validation/diagnostics</div>
+        <div class="subtitle">R&D Engineer & PhD Candidate · UBEM validation/diagnostics</div>
       </div>
       <div class="lang" aria-label="Language switcher">
-        <button data-lang-btn="zh" type="button" aria-pressed="false">中文</button>
         <button data-lang-btn="en" type="button" aria-pressed="false">EN</button>
+        <button data-lang-btn="zh" type="button" aria-pressed="false">中文</button>
         <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Top</a>
       </div>
     </div>
     
     <div class="hero">
       <div class="card pad">
-        <h1 class="h1">Home (CV-style overview)</h1>
+        <h1 class="h1">Home</h1>
         <p class="muted">
-          I work on validation, calibration, and diagnostics of Urban Building Energy Models (UBEMs) using real measured energy data,
-          with a focus on hourly/dynamic predictions. As an industrial PhD candidate, parts of my work are under NDA; this site emphasises
+          I work on the calibration, validation, and diagnostics of Urban Building Energy Models (UBEMs),
+          with a focus on hourly/dynamic predictions and uncertainty quantification. As an industrial PhD candidate, parts of my work are under NDA; this site emphasises
           public outputs, sanitised evidence, and methodological frameworks.
         </p>
         <div class="pills">
           <span class="pill">Focus: <code>Urban energy transition</code></span>
+          <span class="pill"><code>Smart cities & digital twins</code></span>
           <span class="pill"><code>Building energy efficiency</code></span>
           <span class="pill"><code>Demand-side management</code></span>
-          <span class="pill"><code>Time-series load forecasting</code></span>
+          <span class="pill"><code>Time-series analysis forecasting</code></span>
         </div>
         <div class="callout"><strong>Tip:</strong> open any card below to see a detail page with placeholders for figures and interactive 3D (glb or 3D plots).</div>
       </div>
@@ -43,35 +44,37 @@
         <h2 class="h2"><span class="dot"></span>Contact</h2>
         <div class="small muted">📧 <a href="mailto:wangchunxiao1999@gmail.com">wangchunxiao1999@gmail.com</a></div>
         <div class="small muted">📞 <a href="tel:+33665266323">+33 6 65 26 63 23</a></div>
-        <div class="small muted">🔗 ORCID: <a href="#" title="TODO">TODO</a></div>
-        <div class="small muted">🔗 LinkedIn: <a href="#" title="TODO">TODO</a></div>
+        <div class="small muted">🔗 ORCID: <a href="https://orcid.org/0009-0001-0645-5562" title="ORCID"></a></div>
+        <div class="small muted">🔗 LinkedIn: <a href="www.linkedin.com/in/chunxiao-wang-8992b3207" title="LinkedIn"></a></div>
 
         <div class="item"></div>
         <h2 class="h2"><span class="dot"></span>Education</h2>
-        <div class="item"><div class="itemhead"><div class="role">PSL University — PhD, Energy Engineering</div><div class="meta">Feb 2023 – Apr 2026</div></div></div>
+        <div class="item"><div class="itemhead"><div class="role">PSL University — PhD, Energy and process</div><div class="meta">Feb 2023 – Apr 2026</div></div></div>
         <div class="item"><div class="itemhead"><div class="role">INSA Lyon — MSc, Civil Engineering & Urban Planning</div><div class="meta">Sep 2017 – Sep 2022</div></div></div>
-        <div class="item"><div class="itemhead"><div class="role">ENSAL — BSc, Architecture Design</div><div class="meta">Sep 2019 – Jun 2022</div></div></div>
+        <div class="item"><div class="itemhead"><div class="role">ENSAL — BSc, Architecture</div><div class="meta">Sep 2019 – Jun 2022</div></div></div>
       </div>
     </div>
 
     <div class="grid">
       <section class="card pad">
-        <h2 class="h2"><span class="dot"></span>Experience (open details)</h2>
+        <h2 class="h2"><span class="dot"></span>Professional Experiences</h2>
         <div class="cards">
-          <a class="linkcard" href="./experience_ubem_validation.html"><p class="t">Dynamic UBEM validation & diagnostics framework</p><p class="d">Bayesian calibration + UA/SA + multi-scale residual diagnostics + extrapolation.</p></a>
-          <a class="linkcard" href="./experience_data_governance.html"><p class="t">City-scale energy data governance pipeline</p><p class="d">Missing/anomaly handling, unsupervised QC, quality KPIs, screening.</p></a>
-          <a class="linkcard" href="./experience_tools.html"><p class="t">Internal tooling (publicly describable parts)</p><p class="d">Automated zoning, GP4Val, weather enrichment.</p></a>
-          <a class="linkcard" href="./experience_national_profiles.html"><p class="t">National-scale load profile library (internship)</p><p class="d">Sampling → Bayesian networks → behaviour → UBEM simulation.</p></a>
+          <a class="linkcard" href="./experience_ubem_validation.html"><p class="t">Dynamic UBEM calibration, validation & diagnostics framework</p><p class="d">Bayesian calibration + UA/SA + multi-scale residual diagnostics + model validity extrapolation.</p></a>
+          <a class="linkcard" href="./experience_data_governance.html"><p class="t">Urban-scale buildingenergy load profiles curation pipeline</p><p class="d">Missingness handling by resampling, biases adjustment, unsupervised anomaly detection, clustering, data quality control.</p></a>
+          <a class="linkcard" href="./experience_national_profiles.html"><p class="t">National-scale building demand load profiles dataset</p><p class="d">Sampling → Data enrichment → stochastic modeling → UBEM simulation.</p></a>
+          <a class="linkcard" href="./experience_tools.html"><p class="t">Internal tooling (publicly describable parts)</p><p class="d">Automated thermal zoning for UBEMs, Gaussian Process for validation, weather data retrieval, etc.</p></a>
+
         </div>
       </section>
 
       <section class="card pad">
-        <h2 class="h2"><span class="dot"></span>Publications (open details)</h2>
+        <h2 class="h2"><span class="dot"></span>Publications and other research experience</h2>
         <div class="cards">
-          <a class="linkcard" href="./pub_bs2025_gp.html"><p class="t">Building Simulation 2025 (Oral)</p><p class="d">GP-based error structure modelling & extrapolation.</p></a>
-          <a class="linkcard" href="./pub_usim2024_sampling.html"><p class="t">USim 2024 (Oral)</p><p class="d">Survey sampling for data scarcity in validation.</p></a>
-          <a class="linkcard" href="./pub_ibpsa_fr_2024_multip.html"><p class="t">IBPSA France 2024 (Oral)</p><p class="d">Multi-period validation for dynamic outputs.</p></a>
-          <a class="linkcard" href="./project_pv_forecast.html"><p class="t">MSc project: day-ahead PV forecasting</p><p class="d">Weather API + irradiance processing + GHI decomposition.</p></a>
+          <a class="linkcard" href="./pub_bs2025_gp.html"><p class="t">Conference paper (first author): Building Simulation 2025 (Accepted as oral presentation)</p><p class="d">Modelling the error structure in Urban Building Energy Models with a Gaussian Process-based approach.</p></a>
+          <a class="linkcard" href="./pub_usim2024_sampling.html"><p class="t">Conference paper (first author): USim 2024 (Accepted as oral presentation)</p><p class="d">
+Addressing Data Scarcity in UBEM Validation: Application of Survey Sampling Techniques</p></a>
+          <a class="linkcard" href="./pub_ibpsa_fr_2024_multip.html"><p class="t">Conference paper (first author): IBPSA France 2024 (Accepted as oral presentation)</p><p class="d">Advancing Urban Building Energy Model Validation: A Comprehensive Multi-Period Approach for Dynamic Outputs.</p></a>
+          <a class="linkcard" href="./project_pv_forecast.html"><p class="t">MSc R&D project: day-ahead PV forecasting</p><p class="d">Automated Weather API + irradiance calculation & decomposition + PV forecasting.</p></a>
         </div>
       </section>
     </div>
@@ -80,16 +83,18 @@
       <h2 class="h2"><span class="dot"></span>Skills</h2>
       <div class="grid">
         <div>
-          <div class="role">Modelling & evaluation</div>
-          <p class="muted small">Energy simulation · Validation/Calibration/Diagnostics · UA/SA · Bayesian inference · Error analysis</p>
+          <div class="role">Modelling & scientific skills</div>
+          <p class="muted small">Energy modelling · Calibration/Validation/Diagnostics of numerical models · UA/SA · Bayesian inference · Residual analysis</p>
           <div class="role" style="margin-top:10px;">Data & algorithms</div>
-          <p class="muted small">Time-series analysis/forecasting · Anomaly detection · ML · Data quality engineering</p>
+          <p class="muted small">Time-series analysis/forecasting · Anomaly detection · Machine learning · Data science</p>
         </div>
         <div>
-          <div class="role">Tools</div>
+          <div class="role">Programming languages</div>
           <p class="muted small">Python · Matlab · Java · C/C++ · SQL · Git · GeoPandas · QGIS · EnergyPlus · Dimosim</p>
+          <div class="role">Engineering tools</div>
+          <p class="muted small">GeoPandas · QGIS · EnergyPlus · Dimosim · pvlib · Envi-met · Revit · AutoCAD · SketchUp</p>
           <div class="role" style="margin-top:10px;">Languages</div>
-          <p class="muted small">English (fluent) · French (fluent) · German (intermediate)</p>
+          <p class="muted small">English (fluent) · French (fluent) · German (intermediate) · Chinese (native)</p>
         </div>
       </div>
     </section>

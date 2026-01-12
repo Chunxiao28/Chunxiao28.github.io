@@ -25,7 +25,7 @@
     
     <div class="card pad section">
       <div class="breadcrumb"><a href="./index.html">← Back to home</a></div>
-      <h1 class="h1" style="margin-top:8px;">City-scale energy data governance pipeline</h1>
+      <h1 class="h1" style="margin-top:8px;">Urban-scale building load profiles curation pipeline</h1>
       <p class="muted">Note: if under NDA, share sanitised figures/frameworks/interfaces or public-data demos — avoid client data and internal code.</p>
       <div class="kv">
         <div class="k">Page ID</div><div><code>experience_data_governance</code></div>
@@ -36,7 +36,14 @@
     <section class="card pad section">
       <h2 class="h2"><span class="dot"></span>Overview</h2>
       <div class="placeholder">
-        <strong>TODO:</strong> 用 4–8 行写清楚背景、你的贡献、方法、产出与影响（尽量量化）。
+        <strong>Context:</strong> UBEMs are increasingly used for operational, time-sensitive applications (e.g., grid
+        stability and load shifting), which makes dynamic (hourly) calibration and validation essential. Yet, at urban
+        scale, validation data often come from commercially sourced datasets (e.g., utility/DHN meters, platform
+        aggregators) that offer coverage but not necessarily fitness-for-purpose: measurements are frequently sparse,
+        short-term, and operationally incomplete, with substantial missingness and inconsistent data quality.
+        This creates a core controversy for UBEM validation: the most accessible urban-scale datasets are the least
+        reliable for assessing high-resolution predictive accuracy, while common missing-data workarounds (dropping
+        buildings, shortening periods, simple imputation) undermine representativeness and temporal generalisability.
       </div>
     </section>
 

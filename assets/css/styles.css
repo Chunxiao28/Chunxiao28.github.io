@@ -71,3 +71,27 @@ figcaption{margin-top:6px;font-size:12px;color:var(--muted)}
   .gallery{grid-template-columns:1fr}
   .kv{grid-template-columns:1fr}
 }
+.zoomable .zoom-toolbar{
+  display:flex; gap:8px; justify-content:flex-end; margin-bottom:8px;
+}
+.zoomable .zoom-toolbar button{
+  border:1px solid var(--border);
+  background:#fff; color:var(--fg);
+  padding:6px 10px; border-radius:999px;
+  cursor:pointer; font-weight:800; font-size:13px;
+}
+.zoomable .zoom-viewport{
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.zoomable .zoom-viewport.dragging{
+  cursor: grabbing;
+}
+.zoomable .zoom-viewport img{
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}

@@ -6,6 +6,7 @@
   <title>Urban-scale building energy data QA/QC pipeline | Chunxiao Wang</title>
   <link rel="stylesheet" href="../assets/css/styles.css"/>
   <script defer src="../assets/js/lang.js"></script>
+  <script defer src="../assets/js/zoom.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -34,27 +35,37 @@
     </div>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Context:</h2>
+      <h2 class="h2"><span class="dot"></span>Context</h2>
       <div class="placeholder">
-        UBEMs are increasingly used for operational, <strong>time-sensitive applications</strong> (e.g., grid
-        stability and load shifting), which makes dynamic (hourly) calibration and validation essential. Yet, at urban
-        scale, validation data often come from <strong>commercially sourced datasets</strong> (e.g., utility/DHN meters, platform
-        aggregators) that offer coverage but not necessarily fitness-for-purpose: <strong>measurements are frequently sparse,
-        short-term, and operationally incomplete, with substantial missingness and inconsistent data quality</strong>.
-        This creates a core controversy for UBEM validation: <strong>the most accessible urban-scale datasets are the least
-        reliable for assessing high-resolution predictive accuracy</strong>, while common missing-data workarounds (dropping
-        buildings, shortening periods, simple imputation) undermine representativeness and temporal generalisability.
+        <p class="muted" style="margin:0">
+          UBEMs are increasingly used for operational, <strong>time-sensitive applications</strong> (e.g., grid
+          stability and load shifting), which makes dynamic (hourly) calibration and validation essential. Yet, at urban
+          scale, validation data often come from <strong>commercially sourced datasets</strong> (e.g., utility/DHN meters, platform
+          aggregators) that offer <strong>coverage but not necessarily fitness-for-purpose</strong>: measurements are frequently sparse,
+          short-term, and operationally incomplete, with substantial missingness and inconsistent data quality.
+          This creates a core controversy for UBEM validation: <strong>the most accessible urban-scale datasets are the least
+          reliable for assessing high-resolution predictive accuracy</strong>, while common missing-data workarounds (dropping
+          buildings, shortening periods, simple imputation) undermine representativeness and temporal generalisability.
+        </p>
       </div>
     </section>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Methodological framework / key figures</h2>
+      <h2 class="h2"><span class="dot"></span>Methodological framework</h2>
       <div class="gallery">
-        <figure class="figure">
-          <!-- If this page is at the repo root, prefer: assets/images/... (no ../) -->
-          <img src="assets/images/data_framework.png"
-               alt="Methodological framework"
-               loading="lazy">
+        <figure class="figure zoomable" id="fig1">
+          <div class="zoom-toolbar" aria-label="Figure zoom controls">
+            <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+            <button type="button" data-zoom="reset" aria-label="Reset zoom">Reset</button>
+            <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          </div>
+
+          <div class="zoom-viewport">
+            <img src="../assets/images/data_framework.png"
+                 alt="Methodological framework"
+                 loading="lazy">
+          </div>
+
           <figcaption class="muted small"><strong>Figure 1:</strong> Methodological framework.</figcaption>
         </figure>
 <!--        <div class="placeholder">-->

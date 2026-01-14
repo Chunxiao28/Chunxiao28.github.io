@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>City-scale energy data governance pipeline | Chunxiao Wang</title>
+  <title>Urban-scale building energy data QA/QC pipeline | Chunxiao Wang</title>
   <link rel="stylesheet" href="../assets/css/styles.css"/>
   <script defer src="../assets/js/lang.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -25,7 +25,7 @@
     
     <div class="card pad section">
       <div class="breadcrumb"><a href="./index.html">← Back to home</a></div>
-      <h1 class="h1" style="margin-top:8px;">Urban-scale building load profiles curation pipeline</h1>
+      <h1 class="h1" style="margin-top:8px;">Urban-scale building energy data QA/QC pipeline</h1>
       <p class="muted">Note: if under NDA, share sanitised figures/frameworks/interfaces or public-data demos — avoid client data and internal code.</p>
       <div class="kv">
         <div class="k">Page ID</div><div><code>experience_data_governance</code></div>
@@ -34,15 +34,15 @@
     </div>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Overview</h2>
+      <h2 class="h2"><span class="dot"></span>Context:</h2>
       <div class="placeholder">
-        <strong>Context:</strong> UBEMs are increasingly used for operational, time-sensitive applications (e.g., grid
+        UBEMs are increasingly used for operational, <strong>time-sensitive applications</strong> (e.g., grid
         stability and load shifting), which makes dynamic (hourly) calibration and validation essential. Yet, at urban
-        scale, validation data often come from commercially sourced datasets (e.g., utility/DHN meters, platform
-        aggregators) that offer coverage but not necessarily fitness-for-purpose: measurements are frequently sparse,
-        short-term, and operationally incomplete, with substantial missingness and inconsistent data quality.
-        This creates a core controversy for UBEM validation: the most accessible urban-scale datasets are the least
-        reliable for assessing high-resolution predictive accuracy, while common missing-data workarounds (dropping
+        scale, validation data often come from <strong>commercially sourced datasets</strong> (e.g., utility/DHN meters, platform
+        aggregators) that offer coverage but not necessarily fitness-for-purpose: <strong>measurements are frequently sparse,
+        short-term, and operationally incomplete, with substantial missingness and inconsistent data quality</strong>.
+        This creates a core controversy for UBEM validation: <strong>the most accessible urban-scale datasets are the least
+        reliable for assessing high-resolution predictive accuracy</strong>, while common missing-data workarounds (dropping
         buildings, shortening periods, simple imputation) undermine representativeness and temporal generalisability.
       </div>
     </section>
@@ -50,16 +50,18 @@
     <section class="card pad section">
       <h2 class="h2"><span class="dot"></span>Methodological framework / key figures</h2>
       <div class="gallery">
-        <div class="placeholder">
-          <strong>Figure placeholder 1</strong>
-          <span class="muted small">Replace with &lt;figure&gt;&lt;img ...&gt;&lt;/figure&gt;</span>
-          <code>&lt;img src="../assets/images/your_framework.png" alt="..."&gt;</code>
-        </div>
-        <div class="placeholder">
-          <strong>Figure placeholder 2</strong>
-          <span class="muted small">e.g., results / diagnostics / comparisons</span>
-          <code>&lt;img src="../assets/images/your_result.png" alt="..."&gt;</code>
-        </div>
+        <figure class="figure">
+          <!-- If this page is at the repo root, prefer: assets/images/... (no ../) -->
+          <img src="assets/images/data_framework.png"
+               alt="Methodological framework"
+               loading="lazy">
+          <figcaption class="muted small"><strong>Figure 1:</strong> Methodological framework.</figcaption>
+        </figure>
+<!--        <div class="placeholder">-->
+<!--          <strong>Figure 2</strong>-->
+<!--          <span class="muted small">e.g., results / diagnostics / comparisons</span>-->
+<!--          <code>&lt;img src="../assets/images/your_result.png" alt="..."&gt;</code>-->
+<!--        </div>-->
       </div>
     </section>
 

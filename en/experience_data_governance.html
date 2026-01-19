@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../assets/css/styles.css"/>
   <script defer src="../assets/js/lang.js"></script>
   <script defer src="../assets/js/zoom.js"></script>
+  <script defer src="../assets/js/gallery.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -27,10 +28,10 @@
     <div class="card pad section">
       <div class="breadcrumb"><a href="./index.html">← Back to home</a></div>
       <h1 class="h1" style="margin-top:8px;">Urban-scale building energy data QA/QC pipeline</h1>
-      <p class="muted">Note: if under NDA, share sanitised figures/frameworks/interfaces or public-data demos — avoid client data and internal code.</p>
+      <p class="muted">Note: tool under NDA, only sanitised figures/frameworks or public versions available.</p>
       <div class="kv">
         <div class="k">Page ID</div><div><code>experience_data_governance</code></div>
-        <div class="k">Status</div><div><span class="badge">Template</span> <span class="muted small">Replace placeholders with your content.</span></div>
+<!--        <div class="k">Status</div><div><span class="badge">Template</span> <span class="muted small">Replace placeholders with your content.</span></div>-->
       </div>
     </div>
 
@@ -52,7 +53,7 @@
 
     <section class="card pad section">
       <h2 class="h2"><span class="dot"></span>Methodological framework</h2>
-      <div class="gallery">
+      <div class="placeholder">
         <figure class="figure zoomable" id="fig1">
           <div class="zoom-toolbar" aria-label="Figure zoom controls">
             <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
@@ -65,58 +66,54 @@
                  alt="Methodological framework"
                  loading="lazy">
           </div>
-
           <figcaption class="muted small"><strong>Figure 1:</strong> Methodological framework.</figcaption>
         </figure>
-<!--        <div class="placeholder">-->
-<!--          <strong>Figure 2</strong>-->
-<!--          <span class="muted small">e.g., results / diagnostics / comparisons</span>-->
-<!--          <code>&lt;img src="../assets/images/your_result.png" alt="..."&gt;</code>-->
-<!--        </div>-->
       </div>
+
     </section>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Image gallery (optional)</h2>
-      <div class="placeholder">
-        复制多张 figure：建议 3–6 张覆盖框架、关键结果与落地形态。
-      </div>
+      <h2 class="h2"><span class="dot"></span>Results gallery</h2>
+
+        <div class="placeholder">
+          <figure class="figure zoomable" id="fig2">
+            <div class="zoom-viewport">
+              <img src="../assets/images/data_res_0.png"
+                   alt="Anomaly detection results"
+                   loading="lazy">
+            </div>
+
+            <figcaption class="muted small"><strong>Figure 2:</strong> Anomaly detection results (density-based approach).</figcaption>
+          </figure>
+        </div>
+
+        <div class="placeholder">
+          <figure class="figure zoomable" id="fig3">
+            <div class="zoom-viewport">
+              <img src="../assets/images/data_res_1.png"
+                   alt="Anomaly detection results"
+                   loading="lazy">
+            </div>
+
+            <figcaption class="muted small"><strong>Figure 3:</strong> Anomaly detection results (LSTM-AE reconstruction).</figcaption>
+          </figure>
+        </div>
+
+        <div class="placeholder">
+            <figure class="figure zoomable" id="fig4">
+              <div class="zoom-viewport">
+                <img src="../assets/images/data_res_2.png"
+                     alt="Cleaned data"
+                     loading="lazy">
+              </div>
+
+              <figcaption class="muted small"><strong>Figure 4:</strong> Validation-grade hourly data availability in a DHN dataset.</figcaption>
+            </figure>
+          </div>
+
     </section>
 
-    <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Interactive 3D (optional)</h2>
-      <p class="muted small">Put your .glb into assets/models/ and update model-viewer src. If no glb, embed Plotly 3D instead.</p>
-      <div class="modelbox">
-        <model-viewer
-          src="../assets/models/placeholder.glb"
-          alt="3D model placeholder"
-          camera-controls
-          auto-rotate
-          rotation-per-second="25deg"
-          exposure="1"
-          style="width:100%; height:420px; background:#fff;">
-        </model-viewer>
-      </div>
-      <div class="placeholder" style="margin-top:10px;">
-        <strong>Plotly 3D option:</strong><br/>
-        <code>&lt;script src="https://cdn.plot.ly/plotly-2.30.0.min.js"&gt;&lt;/script&gt;</code><br/>
-        <code>&lt;div id="plot3d"&gt;&lt;/div&gt;</code>
-      </div>
-    </section>
-
-    <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Links & references</h2>
-      <div class="placeholder">
-        <ul style="margin:0 0 0 18px">
-          <li><a href="#" title="TODO">Paper / DOI (TODO)</a></li>
-          <li><a href="#" title="TODO">Slides (TODO)</a></li>
-          <li><a href="#" title="TODO">Poster (TODO)</a></li>
-          <li><a href="#" title="TODO">Public demo repo (optional)</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="footer"><span class="muted small">Keep filenames identical in /zh and /en to preserve page on language switch.</span></div>
+    <div class="footer"><span class="muted small">© 2026 Chunxiao Wang · Static site (GitHub Pages ready)</span></div>
   </div>
 
   <script>SiteLang.init();</script>

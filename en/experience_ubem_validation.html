@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Dynamic UBEM validation & diagnostics framework | Chunxiao Wang</title>
+  <title>Dynamic UBEM calibration, validation & diagnostics framework | Chunxiao Wang</title>
   <link rel="stylesheet" href="../assets/css/styles.css"/>
   <script defer src="../assets/js/lang.js"></script>
+  <script defer src="../assets/js/zoom.js"></script>
+  <script defer src="../assets/js/gallery.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
@@ -14,7 +16,7 @@
     <div class="topbar">
       <div class="brand">
         <div class="title">Chunxiao Wang | 王春晓</div>
-        <div class="subtitle">Bayesian calibration · UA/SA · multi-scale diagnostics</div>
+        <div class="subtitle">Model V&V · SA&UA · bayesian calibration · spectral analysis</div>
       </div>
       <div class="lang" aria-label="Language switcher">
         <button data-lang-btn="zh" type="button" aria-pressed="false">中文</button>
@@ -25,78 +27,100 @@
     
     <div class="card pad section">
       <div class="breadcrumb"><a href="./index.html">← Back to home</a></div>
-      <h1 class="h1" style="margin-top:8px;">Dynamic UBEM validation & diagnostics framework</h1>
-      <p class="muted">Note: if under NDA, share sanitised figures/frameworks/interfaces or public-data demos — avoid client data and internal code.</p>
+      <h1 class="h1" style="margin-top:8px;">Dynamic UBEM calibration, validation & diagnostics framework</h1>
+<!--      <p class="muted">Note: tool under NDA, only sanitised figures/frameworks or public versions available.</p>-->
       <div class="kv">
         <div class="k">Page ID</div><div><code>experience_ubem_validation</code></div>
-        <div class="k">Status</div><div><span class="badge">Template</span> <span class="muted small">Replace placeholders with your content.</span></div>
+<!--        <div class="k">Status</div><div><span class="badge">Template</span> <span class="muted small">Replace placeholders with your content.</span></div>-->
       </div>
     </div>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Overview</h2>
+      <h2 class="h2"><span class="dot"></span>Context</h2>
       <div class="placeholder">
-        <strong>TODO:</strong> 用 4–8 行写清楚背景、你的贡献、方法、产出与影响（尽量量化）。
+        <p class="muted" style="margin:0">
+          Urban building energy models are increasingly used to analyse the energy performance of buildings at the urban scale,
+          particularly for renovation, the integration of renewable energies and demand-side management. However, the
+          validation of these models still relies mainly on global indicators, which are not well suited to <strong>dynamic use cases
+          and imperfect urban-scale measurements data</strong>. My thesis addresses this issue by proposing a <strong>decision-oriented validation approach</strong>
+          that takes into account <strong>data constraints, the gap between the validation domain and the application domain,
+          and the time scales of interest</strong>.
+        </p>
       </div>
     </section>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Methodological framework / key figures</h2>
-      <div class="gallery">
-        <div class="placeholder">
-          <strong>Figure placeholder 1</strong>
-          <span class="muted small">Replace with &lt;figure&gt;&lt;img ...&gt;&lt;/figure&gt;</span>
-          <code>&lt;img src="../assets/images/your_framework.png" alt="..."&gt;</code>
-        </div>
-        <div class="placeholder">
-          <strong>Figure placeholder 2</strong>
-          <span class="muted small">e.g., results / diagnostics / comparisons</span>
-          <code>&lt;img src="../assets/images/your_result.png" alt="..."&gt;</code>
-        </div>
-      </div>
-    </section>
-
-    <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Image gallery (optional)</h2>
+      <h2 class="h2"><span class="dot"></span>Methodological framework</h2>
       <div class="placeholder">
-        复制多张 figure：建议 3–6 张覆盖框架、关键结果与落地形态。
+        <figure class="figure zoomable" id="fig1">
+          <div class="zoom-toolbar" aria-label="Figure zoom controls">
+            <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+            <button type="button" data-zoom="reset" aria-label="Reset zoom">Reset</button>
+            <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          </div>
+
+          <div class="zoom-viewport">
+            <img src="../assets/images/complete_thesis.png"
+                 alt="Methodological framework"
+                 loading="lazy">
+          </div>
+          <figcaption class="muted small"><strong>Figure 1:</strong> Methodological framework.</figcaption>
+        </figure>
       </div>
+
     </section>
 
     <section class="card pad section">
-      <h2 class="h2"><span class="dot"></span>Interactive 3D (optional)</h2>
-      <p class="muted small">Put your .glb into assets/models/ and update model-viewer src. If no glb, embed Plotly 3D instead.</p>
-      <div class="modelbox">
-        <model-viewer
-          src="../assets/models/placeholder.glb"
-          alt="3D model placeholder"
-          camera-controls
-          auto-rotate
-          rotation-per-second="25deg"
-          exposure="1"
-          style="width:100%; height:420px; background:#fff;">
-        </model-viewer>
-      </div>
-      <div class="placeholder" style="margin-top:10px;">
-        <strong>Plotly 3D option:</strong><br/>
-        <code>&lt;script src="https://cdn.plot.ly/plotly-2.30.0.min.js"&gt;&lt;/script&gt;</code><br/>
-        <code>&lt;div id="plot3d"&gt;&lt;/div&gt;</code>
-      </div>
+      <h2 class="h2"><span class="dot"></span>Results gallery</h2>
+
+        <div class="placeholder">
+          <figure class="figure zoomable" id="fig2">
+            <div class="zoom-viewport">
+              <img src="../assets/images/rbd fast_sa_res.png"
+                   alt="Sensitivity analysis result"
+                   loading="lazy">
+            </div>
+
+            <figcaption class="muted small"><strong>Figure 2:</strong> Sensitivity analysis result (RBD-FAST approach).</figcaption>
+          </figure>
+        </div>
+
+        <div class="placeholder">
+          <figure class="figure zoomable" id="fig3">
+            <div class="zoom-viewport">
+              <img src="../assets/images/pe_res.png"
+                   alt="Parameter estimation result"
+                   loading="lazy">
+            </div>
+
+            <figcaption class="muted small"><strong>Figure 3:</strong> Parameter estimation result (Approximte Bayesian Computation).</figcaption>
+          </figure>
+        </div>
+
+        <div class="placeholder">
+            <figure class="figure zoomable" id="fig4">
+              <div class="zoom-viewport">
+                <img src="../assets/images/error_budget.png"
+                     alt="Error budget"
+                     loading="lazy">
+              </div>
+
+              <figcaption class="muted small"><strong>Figure 4:</strong> CVRMSE decomposition by temporal scales.</figcaption>
+            </figure>
+          </div>
+
     </section>
 
     <section class="card pad section">
       <h2 class="h2"><span class="dot"></span>Links & references</h2>
       <div class="placeholder">
         <ul style="margin:0 0 0 18px">
-          <li><a href="#" title="TODO">Paper / DOI (TODO)</a></li>
-          <li><a href="#" title="TODO">Slides (TODO)</a></li>
-          <li><a href="#" title="TODO">Poster (TODO)</a></li>
-          <li><a href="#" title="TODO">Public demo repo (optional)</a></li>
+          <li><a href="https://drive.google.com/file/d/1CwlirrzcCX7jetX9Sp81AWxbfP7o3GeE/view?usp=sharing" title="Public version">PhD thesis poster</a></li>
         </ul>
       </div>
     </section>
 
-    <div class="footer"><span class="muted small">Keep filenames identical in /zh and /en to preserve page on language switch.</span></div>
+    <div class="footer"><span class="muted small">© 2026 Chunxiao Wang · Static site (GitHub Pages ready)</span></div>
   </div>
 
   <script>SiteLang.init();</script>

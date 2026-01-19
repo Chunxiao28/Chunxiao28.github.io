@@ -58,40 +58,82 @@ a:hover{text-decoration:underline}
 .kv{display:grid;grid-template-columns:160px 1fr;gap:8px 14px;margin-top:10px}
 .kv .k{color:var(--muted)}
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-figure{margin:0}
+figure.figure {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+figure.figure figcaption {
+  text-align: center;
+}
 figure img{width:100%;border-radius:12px;border:1px solid var(--border)}
 figcaption{margin-top:6px;font-size:12px;color:var(--muted)}
 .placeholder{border:1px dashed #cfd6e4;border-radius:12px;background:#fff;padding:14px;min-height:120px;display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:flex-start}
 .placeholder code{font-family:var(--mono);font-size:12px}
 .modelbox{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
-@media (max-width: 860px){
+@media (max-width: 900px){
   .hero{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
+  .gallery{
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*grid-template-columns: 1fr 1fr;*/
+    gap:10px;
+    margin-top:10px;
+    justify-items:center; /* centre grid items if they’re narrower */
+  }
+  /* If only one figure, force 1 column */
+  .gallery.is-single{
+    grid-template-columns: 1fr;
+  }
+
+  /* Nice centring */
+  .gallery > figure{
+    justify-self:center;
+    width:100%;
+  }
+  .gallery .placeholder {
+  align-items: center;
+  }
+  .gallery.is-single > figure{
+    max-width: 900px; /* optional */
+  }
   .kv{grid-template-columns:1fr}
 }
+.zoomable { position: relative; }
 .zoomable .zoom-toolbar{
   display:flex; gap:8px; justify-content:flex-end; margin-bottom:8px;
-}
-.zoomable .zoom-toolbar button{
-  border:1px solid var(--border);
-  background:#fff; color:var(--fg);
-  padding:6px 10px; border-radius:999px;
-  cursor:pointer; font-weight:800; font-size:13px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: rgba(255,255,255,0.75);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 4px 8px;
 }
 .zoomable .zoom-viewport{
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
   touch-action: none;
+  padding-top: 48px;
 }
 .zoomable .zoom-viewport.dragging{
   cursor: grabbing;
 }
 .zoomable .zoom-viewport img{
+  display:block;
+  margin:0 auto;
   user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
+  transform: scale(var(--zoom, 1));
+  transition: transform 0.2s;
+  pointer-events: auto; /* (optional: allows dragging if JS expects it) */
 }
+figcaption{ text-align:center; }
